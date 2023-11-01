@@ -1,9 +1,9 @@
-import { useEffect, useContext } from "react";
-import './index.styles.css';
+import { useContext } from "react";
 
 import { BandsContext } from '../../store/bandsContext';
-import { Album, Member, BandContextType } from '../../types/band.model';
+import { Member, BandContextType } from '../../types/band.model';
 
+import './index.styles.css';
 import AlbumsDetails from './components/AlbumDetails/AlbumDetails'; 
 
 type MemberProps = {
@@ -26,6 +26,7 @@ const MembersDetails: React.FC<MemberProps> = ({ members }) => {
 const Details = () => {
   const { selectedBand, albumsFromSelectedBand } = useContext(BandsContext) as unknown as BandContextType;
   const { name, members } = selectedBand;
+
   return (
     <div className="detailsContainer">
       <h2>{name}'s details</h2>

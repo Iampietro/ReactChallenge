@@ -1,12 +1,24 @@
 import { useState } from "react";
 
+import { useAuth } from '../../hooks/useAuth';
+
 import './index.styles.css'
 
 const LoginPage = () => {
   const [user, setUser] = useState({mail: '', password: ''});
+  const { login } = useAuth();
+
   const handleInputOnChange = ({ currentTarget: { name, value } }: React.ChangeEvent<HTMLInputElement> ) => {
     setUser((state) => ({ ...state, [name]: value }));
   };
+
+  const logUser = () => {
+    login(user);
+  }
+
+  const handleDisabled = () => {
+    return user.mail === '' || user.password === '';
+  }
 
   return (
     <div className="loginContainer">
@@ -31,8 +43,8 @@ const LoginPage = () => {
             className="editBioInput"
           />
         </div>
+        <button onClick={logUser} disabled={handleDisabled()}>Log in</button>
       </div>
-      <button>Log in</button>
     </div>
   )
 };

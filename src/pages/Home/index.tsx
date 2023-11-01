@@ -19,7 +19,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    getBands();
+    bands?.length === 0 && getBands();
   }, []);
 
   const handleClick = async (band: Band) => {
