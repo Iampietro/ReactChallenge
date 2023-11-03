@@ -4,7 +4,7 @@ import { useAuth } from '../../hooks/useAuth';
 
 import './index.styles.css'
 
-const LoginPage = () => {
+const Login = () => {
   const [user, setUser] = useState({mail: '', password: ''});
   const { login } = useAuth();
 
@@ -49,4 +49,4 @@ const LoginPage = () => {
   )
 };
 
-export default LoginPage;
+export default Login;

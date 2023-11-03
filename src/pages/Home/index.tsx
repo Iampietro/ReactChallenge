@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
+      <h1 style={{ textAlign: 'center' }}>Home</h1>
       <div className="container">
         {bands?.length > 0 && bands.map((band: any) => (
           <Card band={band} handleClick={handleClick} key={band.id}/>
